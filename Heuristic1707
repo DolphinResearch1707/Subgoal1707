@@ -1,0 +1,20 @@
+ZSP(Given State,Given Goal,Actions)
+1.State<---GivenState                   /*start with the empty plan*/
+2.Plan<---()                           /*Start with Empty Stack*/
+Set(Given Goal,Stack)
+While not Empty(Stack)
+if x<-----Pop(stack)
+dp x<------Pop(Stack)
+if x{<------actions
+Then plan<-----(plan) <------------------------(PLAN.Y)   /*operator extends plan with Y*/
+Else if x is a conjunct of goal predicates C
+Then SolvedFlag<--------------FALSE
+if Solved Flag<-----FALSE
+Then PuchSet(a,Stack)
+Else if Y{Givenstate  /* Y is an unsatisfied   Goal Prediction*/
+then choose Action a that achieves Y
+if no such action exists
+Then     Return Failure
+Push(a,Stack)
+PushSet(Precondition(a),Stack
+Return Plan
